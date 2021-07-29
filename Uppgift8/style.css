@@ -1,0 +1,109 @@
+header {
+    background: linear-gradient(to right, #ad902f 31%, #524a19 65%);    
+}
+
+.nav-color{
+    color: black;
+}
+
+.nav-color:hover{
+    color:chocolate;
+    
+}
+
+#right-column{
+    background: linear-gradient(to right, #c1c28f00 0%, rgb(44, 22, 6) 100%);
+    writing-mode: vertical-rl;
+    
+    color: rgba(1.0, 0.0, 0.0, 0.8);
+    white-space: nowrap;
+    
+}
+
+#primary-div{
+    position:absolute; 
+    
+    
+}
+
+#secondary-div{
+    
+    position:relative;
+    
+    padding:0; 
+    margin:0;
+}
+
+#main-body{
+    
+    background: repeating-linear-gradient(
+  90deg,
+  #babcca38,
+  #5c64503b 4px,
+  #5698462d 4px,
+  #adafb825 8px );
+
+}
+
+
+
+footer{
+    position:fixed; 
+    bottom: 0; 
+    height:96px
+}
+
+.shadowy-text{
+    font: 700 50px "Raleway";
+    text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+	color: rgb(243, 181, 10);
+    white-space: nowrap;	
+}
+
+.menu-text{
+    font-size: 24px;
+}
+
+.media-link{
+    font-size: 64px; letter-spacing: 10px;    
+}
+.media-link:hover{
+    text-decoration: none;
+        
+    
+}
+
+.facebook-color{
+    color:#3B5998;
+}
+.facebook-color:hover{
+    color:#517ad3;    
+}
+.twitter-color{
+    color:#55ACEE;
+    
+}
+.twitter-color:hover{
+    color:#90cdfc;
+}
+.instagram-color{
+    color:#3f729b;
+    
+}
+.instagram-color:hover{
+    color:#61aee9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

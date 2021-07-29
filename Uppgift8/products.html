@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <!-- the head -->
+    <head>       
+        <title>Kaffe Kungen</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./style.css">
+        <script src="javascript/pretendDB.js"></script>
+        <script src="javascript/card.js"></script>
+        <script src="javascript/party.js"></script>
+        
+        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+
+        
+    </head>    
+
+    <!-- the body -->
+    <body id="main-body" onload="{loadMachines();adjustPadding();setPartyPrice()}" onresize="adjustPadding();">
+
+        <div style="position:fixed; overflow-y: auto; overflow-x: hidden;" id="primary-div" class="h-100 m-0 p-0 w-100">
+            <div id="secondary-div" class="h-100 m-0 p-0 w-100">
+            <!-- the header with navbar and logo -->
+            <header class="shadow-lg border-bottom border-dark m-0 p-0">
+                <h1 class="h1 d-md-none d-block text-center shadowy-text">Kaffe Kungen</h1>
+                
+                <nav class="navbar navbar-expand-sm align-items-end navbar-light m-0 p-0">
+                    <a class="navbar-brand" href="./index.html">  
+                        <svg height=64 width=128 ><use xlink:href='#logo'/></svg>                 
+                    </a>
+                    <!-- the button to replace meny when small -->        
+                    <button class="navbar-toggler shadow-lg" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span  class="navbar-toggler-icon"></span>
+                    </button>                    
+                    <!-- meny -->
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav menu-text">            
+                            <li class="nav-item">
+                                <a class="nav-link nav-color active" href="./products.html">Produkter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-color" href="./about.html">OmOss</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-color" href="./chart.html">Kassa<i class="fa fa-shopping-cart text-dark shadow" ></i></a> 
+                            </li>      
+                        </ul>
+                    </div>
+
+                </nav>                
+            </header> 
+
+            <!-- the main content container -->
+            <div id="main-content">
+                       
+                                
+                <!-- middle column, the important stuff -->
+                <div id="main-paper" style="background-color: white;">
+
+
+                    <!-- the carousel -->
+                    <div style="max-width: 1024px; display: none; text-align: center;" id="demo" class="carousel slide m-auto" data-ride="carousel">
+                        <h1>KaffeParty!</h1>
+                        <div class="carousel-inner rounded border border-dark">
+                            <div class="carousel-item active">
+                                <img class="rounded border border-secondary img-fluid" src="https://via.placeholder.com/1024x512.png?" alt="pic1" >                            
+                            </div>
+                            <div class="carousel-item">
+                                <img class="rounded border border-secondary img-fluid" src="https://via.placeholder.com/1024x512.png?" alt="pic2" >                            
+                            </div>
+                            <div class="carousel-item">
+                                <img class="rounded border border-secondary img-fluid" src="https://via.placeholder.com/1024x512.png?" alt="pic3" >
+                            </div>
+                        </div>
+        
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+
+                    
+                    <!-- tabbed product menu -->
+                    <ul class="nav nav-tabs mt-2 shadow">
+                        <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#menu1" onclick="hideCarousel();">Kaffemaskiner</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#menu2" onclick="showCarousel();">Kaffeparty</a>
+                        </li>                        
+                    </ul>
+                    
+                    <!-- Tab panes -->
+                    <div class="tab-content h-100 m-0 p-0">
+                        <div style="background-color: white;" class="h-100 tab-pane active border-left border-right shadow p-0 m-0" id="menu1">
+                            
+                            <div class="container-fluid m-0 p-0">
+                                <div id="machines">
+                                
+                                    <br><br><br>    
+                                </div>
+                            </div>                           
+                            
+                        </div>
+
+
+                        <div style="background-color: white;" class="h-100 tab-pane border-left border-right border-bottom shadow" id="menu2">
+                            
+                            <!-- sub tab menu -->
+                            <ul class="nav nav-tabs shadow">
+                                <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#menu3" >Företag</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#menu4" >Privat</a>
+                                </li>                        
+                            </ul>
+
+                            <div class="tab-content h-100">
+                                <div style="background-color: white;" class="h-100 tab-pane active border-left border-right border-bottom shadow align-bottom" id="menu3">
+                                    
+
+
+                                    <div class="container">
+                                        <br><br>
+                                        <h3>Boka ditt nästa företags event här!</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet,
+                                             consectetur adipisicing elit,
+                                              sed do eiusmod tempor incididunt
+                                               ut labore et dolore magna aliqua.
+                                                Ut enim ad minim veniam,
+                                                 quis nostrud exercitation
+                                                  ullamco laboris nisi ut aliquip
+                                                   ex ea commodo consequat. Duis
+                                                    aute irure dolor in reprehenderit
+                                                     in voluptate velit esse cillum dolore
+                                                      eu fugiat nulla pariatur. Excepteur sint
+                                                       occaecat cupidatat non proident, sunt in culpa
+                                                        qui officia deserunt mollit anim id est laborum.
+                                        </p>
+                                        <a href="#">kontakt@kaffekungen.se</a>
+                
+                                    </div> 
+                                
+                                </div>
+                                <div style="background-color: white;" class="h-100 tab-pane border-left border-right border-bottom shadow" id="menu4">
+                                    
+                                    
+
+                                    <div class="container">
+                                        <br><br>
+                                        <h3>Så här går det till!</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet,
+                                             consectetur adipisicing elit,
+                                              sed do eiusmod tempor incididunt
+                                               ut labore et dolore magna aliqua.
+                                                Ut enim ad minim veniam,
+                                                 quis nostrud exercitation
+                                                  ullamco laboris nisi ut aliquip
+                                                   ex ea commodo consequat. Duis
+                                                    aute irure dolor in reprehenderit
+                                                     in voluptate velit esse cillum dolore
+                                                      eu fugiat nulla pariatur. Excepteur sint
+                                                       occaecat cupidatat non proident, sunt in culpa
+                                                        qui officia deserunt mollit anim id est laborum.
+                                        </p>
+                                        <br>
+                                            <p>pris: <var id="part-price">128</var>kr</p>
+                                        <br>
+                
+                                    </div>                                    
+                                    
+                                    <!-- party form -->
+                                    <div class="container">
+                                        <form onsubmit="return validateForm(this);">
+                                            <div class="form-group form-inline">
+                                                <input placeholder="datum" type="text" id="orangeDateOfBirthForm" name="orangeDateOfBirthForm" class="form-control validate" required>                                             
+                                                <button value="kaffeparty" type="submit" class="btn btn-success" onclick=this.blur() >Köp</button>
+                                            </div>
+                                        </form>
+                                    </div>                                                            
+                                    
+                                
+                                </div>
+                            </div>  
+                        
+                        </div>                        
+                    </div>
+
+                          
+
+
+
+
+
+                    
+
+
+
+
+                    
+
+
+                    
+
+                    
+                </div>
+                
+                
+                
+            </div> 
+        </div>
+                  
+        <!-- the footer with media links -->
+        <footer class="card-footer bg-dark text-white-50 container-fluid border-top border-dark">                
+                <div class="row float-right">
+                    <div class="col-auto d-none d-sm-block">
+                        <p>webmaster Jonas Thomassen</p>                            
+                        <p>copyright&copy; 2021-07-21</p>
+                    </div>                    
+                    <div class="col-auto d-inline-flex overflow-hidden float-right">
+                        <a href="#" class="fa fa-facebook fa-4x media-link facebook-color"></a>
+                        <a href="#" class="fa fa-twitter fa-4x media-link twitter-color"></a>
+                        <a href="#" class="fa fa-instagram fa-4x media-link instagram-color"></a>
+                    </div>
+                </div>                
+            </footer>        
+        </div> 
+    
+    
+    
+    
+    
+    
+    
+    <!-- the logo -->
+    <svg>
+        <symbol height="64" width="128" id="logo">
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">                
+                <stop offset="0%" style="stop-color:chocolate ;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:black;stop-opacity:1" />
+                </linearGradient>
+
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">                
+                    <stop offset="0%" style="stop-color:rgb(233, 218, 11) ;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgb(190, 120, 13);stop-opacity:1" />
+                </linearGradient>
+
+            </defs>
+            <ellipse cx="64" cy="32" rx="64" ry="32" fill="url(#grad1)" />
+            <text class="shadowy-text" fill="url(#grad2)" x="24" y="48">KK</text>            
+        </symbol>
+    </svg>
+    
+    
+   
+    
+    
+    
+    </body>
+
+    
+
+    
+
+
+
+
+
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <!-- the head -->
+    <head>
+        <title>Kaffe Kungen</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>            
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./style.css">
+        <script src="javascript/card.js"></script>
+        <script src="javascript/pretendDB.js"></script>
+    </head>
+
+    <!-- the body -->
+    <body id="main-body" onload="displayBasket();">
+
+        <div style="position:fixed; overflow-y: auto; overflow-x: hidden;" id="primary-div" class="h-100 m-0 p-0 w-100">
+            <div  id="secondary-div" class="h-100 m-0 p-0 w-100">
+            <!-- the header with navbar and logo -->
+            <header class="shadow-lg border-bottom border-dark m-0 p-0 w-100">
+                <h1 class="h1 d-md-none d-block text-center shadowy-text">Kaffe Kungen</h1>
+                
+                <nav style="overflow-x:hidden;" class="navbar navbar-expand-sm align-items-end navbar-light m-0 p-0">
+                   <a class="navbar-brand float-left" href="./index.html">  
+                        <svg height=64 width=128 ><use xlink:href='#logo'/></svg>                 
+                    </a> 
+                    <!-- the button to replace meny when small -->        
+                    <button class="navbar-toggler shadow-lg" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span  class="navbar-toggler-icon"></span> 
+                    </button>                    
+                    <!-- meny -->
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav menu-text">            
+                            <li class="nav-item">
+                                <a class="nav-link nav-color" href="./products.html">Produkter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-color" href="./about.html">OmOss</a>
+                            </li> 
+                            <li class="nav-item active">
+                                <a class="nav-link nav-color" href="./chart.html">Kassa<i class="fa fa-shopping-cart text-dark shadow" ></i></a> 
+                            </li>                             
+                        </ul>
+                    </div>
+
+                </nav>                
+            </header>
+            
+            <!-- the main content container -->
+            <div class="row h-100 m-0 p-0" >
+                <!-- some interesting but unimportant left side notes, not awailable on small screen --> 
+                <div class="col-md-2 d-none d-md-block py-5 pl-4">                                       
+                    <img class="img-fluid rounded border border-secondary shadow" src="https://via.placeholder.com/256x256.png?" alt="kaffeBild">                
+                </div>            
+                
+                <!-- middle column, the important stuff -->
+                <div class="col-12 col-md-8 mb-5 mt-5">
+                    
+                    <div class="container">
+                        <h3>Köpvilkor!</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet,
+                             consectetur adipisicing elit,
+                              sed do eiusmod tempor incididunt
+                               ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam,
+                                 quis nostrud exercitation
+                                  ullamco laboris nisi ut aliquip
+                                   ex ea commodo consequat. Duis
+                                    aute irure dolor in reprehenderit
+                                     in voluptate velit esse cillum dolore
+                                      eu fugiat nulla pariatur. Excepteur sint
+                                       occaecat cupidatat non proident, sunt in culpa
+                                        qui officia deserunt mollit anim id est laborum.
+                        </p>                        
+                    </div>                  
+
+                    <div id="table" style="overflow: scroll; display:none;" class="container w-100">
+                        <table class="table w-100">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Vara</th>
+                            <th scope="col">Option</th>
+                            <th scope="col">Pris</th>
+                        </tr>
+                        </thead>
+                        <tbody id="table-body">
+                        
+                        </tbody>
+                    </table>
+                    </div>
+                  
+                    <form style="display: none;" id="best" class="form-group border border-dark rounded-pill bg-white text-center m-5 p-3">
+                        
+                        <button class="btn btn-success" type="button" onclick="sendOrder();">Skicka</button>
+                        
+                    </form>
+
+                  <br><br><br>
+                </div>
+
+                
+                
+                <!-- right column, to make big screens spacier, also contains a vertical brandname -->
+                <div id="right-column" class="col-md-2 d-none d-md-block">
+                    <h1 class="h1 shadowy-text">Kaffe Kungen</h1>     
+                </div>
+                
+            </div> 
+
+            
+        </div>
+                  
+        <!-- the footer with media links -->
+        <footer class="bg-dark text-white-50 container-fluid border-top border-dark py-1">                
+                <div class="row float-right">
+                    <div class="col-auto d-none d-sm-block">
+                        <p>webmaster Jonas Thomassen</p>                            
+                        <p>copyright&copy; 2021-07-21</p>
+                    </div>                    
+                    <div class="col-auto d-inline-flex overflow-hidden float-right">
+                        <a href="#" class="fa fa-facebook fa-4x media-link facebook-color"></a>
+                        <a href="#" class="fa fa-twitter fa-4x media-link twitter-color"></a>
+                        <a href="#" class="fa fa-instagram fa-4x media-link instagram-color"></a>
+                    </div>
+                </div>                
+            </footer>  
+            
+
+        </div> 
+    
+    
+    <!-- the logo -->
+    <svg>
+        <symbol height="64" width="128" id="logo">
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">                
+                <stop offset="0%" style="stop-color:chocolate ;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:black;stop-opacity:1" />
+                </linearGradient>
+
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">                
+                    <stop offset="0%" style="stop-color:rgb(233, 218, 11) ;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgb(190, 120, 13);stop-opacity:1" />
+                </linearGradient>
+
+            </defs>
+            <ellipse cx="64" cy="32" rx="64" ry="32" fill="url(#grad1)" />
+            <text class="shadowy-text" fill="url(#grad2)" x="24" y="48">KK</text>            
+        </symbol>
+    </svg>
+    
+    
+    </body>    
+
+</html>
